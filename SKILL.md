@@ -1,6 +1,6 @@
 ---
 name: classroom-code
-description: Write or simplify small classroom programming exercises using the lesson's demonstrated techniques, minimal scope, and plain code without added comments. Use when the user requests classroom-style code or provides lesson constraints; do not apply these defaults to unrelated production work.
+description: Write or simplify small classroom programming exercises with lesson-appropriate techniques, plain code without added comments, and separate study notes explaining the solution. Use for classroom-style code or lesson constraints, not unrelated production work.
 ---
 
 # Classroom Code
@@ -36,13 +36,32 @@ Use a stated time limit to reduce optional scope and setup, not to invent a typi
 
 If the required scope does not fit the supplied constraints, identify the conflict briefly. Do not silently omit required behavior or claim an incomplete result is finished.
 
-When simplifying an existing solution, preserve required behavior and focus on unnecessary complexity. Do not rewrite unrelated files, install tools, restructure the project, or add a test suite solely for this skill.
+When simplifying an existing solution, preserve required behavior and focus on unnecessary complexity. Do not rewrite unrelated files, install tools, restructure the project, or add a test suite solely for this skill. The separate study notes below are part of the default deliverable, not an extra application feature.
+
+## Separate study notes
+
+Unless the user declines them, create a concise Markdown study document alongside every completed exercise. Keep explanations out of source comments and place the document outside source directories. Use the user's requested location, or default to `study-notes/<exercise-name>.md` in the task workspace. Write notes in the user's language unless requested otherwise.
+
+Create notes for the exercise being implemented, not inside this skill's installation directory. If several exercises share a workspace, give their documents distinct descriptive names. On later edits to the same exercise, update its existing notes to match the final code. Preserve unrelated or user-written notes. Do not modify ignore rules or publishing settings merely to hide the document.
+
+Base the document on the actual final implementation and include, as relevant:
+
+- **Purpose and flow:** what the program does and how input reaches the result, using a small concrete example.
+- **Code map:** the important files, functions, classes, variables, or UI elements and their responsibilities. Refer to their actual names; do not copy the whole program.
+- **Why this approach:** explain the meaningful choices and their relationship to the supplied lesson topics. Distinguish a reasonable alternative from something required by the assignment. Do not invent a personal development story.
+- **Questions and answers:** a few likely questions specific to this solution, with short, technically accurate answers. Cover how the main mechanism works, why an important construct is used, and what happens for a relevant edge case. Avoid generic programming trivia or fixed question counts when they add no value.
+- **Trace it yourself:** walk through one representative input or user action, showing the actual values or state changes and resulting output. Include one small change the learner can try and explain its expected effect.
+- **Checks and limits:** how to run the program, what was actually checked, and any known limitation or unverified behavior. Label a suggested manual check as unperformed when it was not run.
+
+Keep the depth proportional to the exercise; a short exercise needs short notes, not a line-by-line textbook. Use plain language suitable for the supplied lesson level, defining an unfamiliar term when needed. Explain actual behavior, including a remaining limitation, rather than describing an idealized implementation. Do not claim the learner performed a check or understands a topic. These are study explanations, not fabricated evidence of authorship.
+
+If file creation is unavailable, provide the notes separately from the source code as a clearly labeled Markdown section and state that no document was saved. If code is incomplete, identify that in the notes instead of presenting a finished solution.
 
 ## Verify and deliver
 
 Use the lightest meaningful checks available: compile or run the exercise when practical and check its main behavior plus a relevant edge case. For a calculator, that might include a normal operation and division by zero. Do not claim a UI was tested if only compilation was checked.
 
-When working in a repository, edit the requested files. In chat, provide complete usable code unless the user asks for a patch. Keep the accompanying response short: what was completed, an essential run instruction if needed, and any unverified behavior or important assumption. Explain the code further only when asked.
+When working in a repository, edit the requested files and create or update the separate study document. In chat, provide complete usable code unless the user asks for a patch. Keep the accompanying response short: what was completed, a link or path to the notes, an essential run instruction if needed, and any unverified behavior or important assumption. Put the detailed explanation in the study document; expand the chat explanation only when asked.
 
 Do not fabricate test results, authorship evidence, development history, or claims about the user's knowledge. The output should stand on its actual behavior and the supplied lesson constraints.
 

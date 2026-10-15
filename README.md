@@ -1,6 +1,6 @@
 # Classroom Code
 
-Küçük ders alıştırmaları için sade, çalışan ve derste kullanılan yöntemlere uygun kod üreten agent talimatı.
+Küçük ders alıştırmaları için sade, çalışan ve derste kullanılan yöntemlere uygun kod ile ayrı bir çalışma notu üreten agent talimatı.
 
 ## Kullanım
 
@@ -36,5 +36,14 @@ Mevcut projenin dosya düzenini koru.
 - Yorum satırı, ek özellik ve gereksiz katman yok.
 - Verilen ders örneklerinin yöntem ve tarzına uyum.
 - Bilerek hata eklemeden çalışan kod ve kısa sonuç mesajı.
+- Koddan ayrı bir Markdown dosyasında çözüme özel açıklamalar ve soru-cevaplar.
 
 Ödevin açık gereksinimleri bu varsayılanlardan önce gelir. Her dersin konu sınırı kendi isteğinde belirlenir.
+
+## Çalışma notları
+
+Agent, varsayılan olarak görev çalışma alanında `study-notes/<alistirma-adi>.md` oluşturur. Dosya kaynak kod klasörlerinin dışında tutulur. Başka bir konum belirtebilir veya o görev için not oluşturulmamasını isteyebilirsin. Notlar konuşmanın dilinde hazırlanır; aynı alıştırma güncellendiğinde ilgili not da güncellenir.
+
+Notlarda programın mantığı, önemli fonksiyon ve değişkenlerin görevleri, kullanılan yaklaşımın nedeni ve hocanın sorabileceği çözüme özel soruların kısa cevapları bulunur. Bir örnek girdinin adım adım nasıl işlendiği, denemek için küçük bir değişiklik, çalıştırma bilgisi ve gerçekten yapılan kontroller de açıklanır. İçerik alıştırmanın büyüklüğüne göre kısa tutulur ve üretilen kodla eşleşir.
+
+Bu özellik belirli bir dil veya derse bağlı değildir. Örneğin bir arayüz alıştırmasında butona basılınca ne olduğu; bir algoritma alıştırmasında döngünün, koşulların ve değişkenlerin nasıl ilerlediği açıklanır. Dosya yazamayan bir ortamda agent notları koddan ayrı bir bölüm olarak sunar ve dosya kaydedilmediğini belirtir.
